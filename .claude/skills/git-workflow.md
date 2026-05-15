@@ -25,12 +25,16 @@ git checkout -b feat-{feature-name}_v{iteration}
 ## Commit rules
 - One logical change per commit
 - Never bundle unrelated files or changes in one commit
-- Format: feat: {short description of what changed}
+- Format: `<type>: <description>` — type must be one of: feat, fix, refactor, docs
+- Always include Claude co-author attribution in every commit message:
+  Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
 - Examples:
   feat: add proposals list component
-  feat: add proposals API route
-  feat: add proposal status badge
-  feat: connect proposals page to React Query
+  fix: correct proposal status badge colour
+  refactor: extract proposal card into shared component
+  docs: update proposals API route documentation
+- After every commit, push the branch immediately:
+  git push origin feat-{feature-name}_v{iteration}
 
 ## When feature is complete and tested:
 1. Read current version from VERSION file
@@ -41,6 +45,7 @@ git checkout -b feat-{feature-name}_v{iteration}
 3. Update VERSION file with new version
 4. Commit the bump separately:
    feat: bump version to v{new-version}
+   Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
 5. Push branch:
    git push origin feat-{feature-name}_v{iteration}
 6. Raise PR:

@@ -74,6 +74,7 @@ Never work directly on main under any circumstances.
 Always start by pulling latest main and creating a feature branch.
 When starting a feature prompt, the version bump type (patch/minor/major) 
 will be specified — use it to update the VERSION file before raising the PR.
+- Remote: git@github.com:Sri-Ln/FSM-Admin.git
 
 ## Environment
 - OS: Windows
