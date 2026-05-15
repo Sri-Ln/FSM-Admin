@@ -70,8 +70,8 @@ Update CLAUDE.md before ending any session.
 
 ## Git Workflow
 Before starting any feature, follow @.claude/skills/git-workflow.md exactly.
-Never work directly on main under any circumstances.
-Always start by pulling latest main and creating a feature branch.
+Never work directly on master under any circumstances.
+Always start by pulling latest master and creating a feature branch.
 When starting a feature prompt, the version bump type (patch/minor/major) 
 will be specified — use it to update the VERSION file before raising the PR.
 - Remote: git@github.com:Sri-Ln/FSM-Admin.git

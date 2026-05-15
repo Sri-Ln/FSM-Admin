@@ -1,8 +1,8 @@
 # Git Workflow Skill
 
 ## Rules
-- Never push directly to main under any circumstances
-- Always branch from latest main
+- Never push directly to master under any circumstances
+- Always branch from latest master
 - Read VERSION file in repo root before starting any feature
 
 ## Branch naming
@@ -16,9 +16,9 @@ Format: feat-{feature-name}_v{iteration}
   feat-proposals_v2   ← second time touching proposals
 
 ## Starting any new feature — run in order:
-git checkout main
+git checkout master
 git fetch origin
-git pull origin main
+git pull origin master
 git branch -a | grep feat-{feature-name}
 git checkout -b feat-{feature-name}_v{iteration}
 
@@ -52,10 +52,10 @@ git checkout -b feat-{feature-name}_v{iteration}
    gh pr create \
      --title "feat: {feature-name} [v{new-version}]" \
      --body "{brief description of what was built and changed}" \
-     --base main
+     --base master
 
 ## After PR is approved and auto-merged:
-git checkout main
+git checkout master
 git fetch origin
-git pull origin main
+git pull origin master
 # Branch is auto-deleted by GitHub — do not delete manually
