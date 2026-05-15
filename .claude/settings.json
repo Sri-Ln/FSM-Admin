@@ -1,5 +1,20 @@
 {
+  "permissions": {
+    "allow": ["Bash(git push*)"]
+  },
   "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$d=[Console]::In.ReadToEnd()|ConvertFrom-Json;$cmd=$d.tool_input.command;if($cmd-match'git push'-and $cmd-match'\\bmaster\\b'){Write-Output '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"deny\",\"permissionDecisionReason\":\"Direct pushes to master are not allowed. Push to a feature branch instead.\"}}'}",
+            "shell": "powershell"
+          }
+        ]
+      }
+    ],
     "PostToolUse": [
       {
         "matcher": "Bash",
