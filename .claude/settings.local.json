@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path E:\\\\NEU\\\\Projects\\\\Admin -Recurse -Force)",
+      "Bash(Select-Object FullName)",
+      "Bash(ConvertTo-Csv -NoTypeInformation)",
+      "Bash(Write-Output)",
+      "PowerShell(Remove-Item *)",
+      "Bash(pnpm add *)",
+      "Bash(pnpm dev *)"
+    ]
+  }
+}
